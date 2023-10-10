@@ -1,38 +1,144 @@
-.App {
-  text-align: center;
+.container {
+  display: flex;
+  background-color: #333;
+  color: #fff;
+  border-radius: 15px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  margin: 10px;
+  overflow: hidden; /* Agregamos esta línea para ocultar la barra de desplazamiento */
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+.info-column {
+  flex: 2;
+  padding: 15px;
+  box-sizing: border-box;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+.list-column {
+  flex: 1;
+  padding: 15px;
+  box-sizing: border-box;
+  background-color: #555;
+  
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+.cover-image {
+  width: 50%;
+  display: block;
+  margin: 0 auto;
+  border-radius: 5px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+button {
+  background-color: #ff5722;
+  color: #fff;
+  border: none;
+  padding: 5px 10px;
+  border-radius: 5px;
+  margin: 0px;
+  cursor: pointer;
+}
+
+button:hover {
+  background-color: #e64a19;
+}
+
+.episode-list {
+  max-height: 430px;
+  overflow-y: auto;
+  border: 0px solid #ccc;
+  border-radius: 5px;
+  padding: 0px;
+  margin-top: 50px;
+}
+
+ul {
+  list-style: none;
+  padding: 0;
+}
+
+li {
+  margin-bottom: 10px;
+  padding: 0px;
+}
+
+a {
+  text-decoration: none;
+  color: #fff;
+  transition: color 0.3s;
+}
+
+a:hover {
+  color: #ff5722;
+}
+
+h1 {
+  margin: 0;
+}
+h2 {
+  margin: 0;
+}
+
+.player-container {
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
 }
 
-.App-link {
-  color: #61dafb;
+.player-container h3 {
+  margin-top: 0;
+  margin-bottom: 5px;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.player-links {
+  display: flex;
+}
+
+.player-links a {
+  margin-right: 10px;
+}
+
+.video-player iframe {
+  width: 100%;
+  max-width: 720px;
+  height: 360px;
+  border: none;
+  border-radius: 5px;
+  padding: 20px;
+}
+
+#4vgu0o2s {
+  display: none !important;
+}
+
+.active {
+  background-color: #c01717;
+  box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.2);
+}
+.episode-list ul {
+  padding: 0;
+}
+.episode-list li {
+  list-style: none;
+  margin: 0px;
+}
+
+.episode-list button:hover {
+  background-color: #e0704d;
+}
+
+.episode-list button {
+  width: 100%;
+  background-color: #645a58;
+  color: #fff;
+  border: none;
+  padding: 10px; /* Ajusta este valor según sea necesario */
+  border-radius: 3px; /* Ajusta este valor según sea necesario */
+  cursor: pointer;
+  text-align: left;
+}
+
+.episode-list button.active {
+  background-color: #947d7d; /* Cambia este color según tu preferencia */
 }
