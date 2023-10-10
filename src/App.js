@@ -46,6 +46,7 @@ function App() {
   return (
     <div className="container">
       <div className="info-column">
+        {/* eslint-disable-next-line */}
         <a href="#" onClick={() => setSelectedChapter(null)}>
           <h1>{data.title}</h1>
         </a>
@@ -101,6 +102,7 @@ function App() {
                         (dropcap, i) =>
                           !dropcap.player.includes("publicidad") && (
                             <div key={i}>
+                              {/* eslint-disable-next-line */}
                               <a
                                 href="#"
                                 onClick={(e) => {
@@ -124,6 +126,7 @@ function App() {
 
                   {selectedPlayer && (
                     <div className="video-player">
+                      {/* eslint-disable-next-line */}
                       <iframe
                         src={selectedPlayer}
                         frameBorder="0"
