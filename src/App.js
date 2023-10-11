@@ -10,6 +10,18 @@ function App() {
   const [selectedChapter, setSelectedChapter] = useState(null);
   const [selectedPlayer, setSelectedPlayer] = useState(null);
 
+  React.useEffect(() => {
+    if (selectedChapter) {
+      const selectedCap = dataCaps.find(
+        (cap) => cap.chapter === selectedChapter.titulo
+      );
+      if (selectedCap && selectedCap.dropcapsData.length > 0) {
+        const lastDropcap =
+          selectedCap.dropcapsData[selectedCap.dropcapsData.length - 1];
+        setSelectedPlayer(lastDropcap.player);
+      }
+    }
+  }, [selectedChapter]);
   const handlePlayerClick = (player) => {
     setSelectedPlayer(player);
   };
@@ -98,29 +110,59 @@ function App() {
                   <div className="player-container">
                     <h3>Server</h3>
                     <div className="player-links">
-                      {cap.dropcapsData.map(
-                        (dropcap, i) =>
-                          !dropcap.player.includes("publicidad") && (
-                            <div key={i}>
+                      {cap.dropcapsData
+                        .slice()
+                        .reverse()
+                        .map((dropcap, i) => (
+                          <div key={i}>
+                            {/* eslint-disable-next-line */}
+                            <a
+                              href="#"
+                              onClick={(e) => {
+                                e.preventDefault();
+                                handlePlayerClick(dropcap.player);
+                              }}
+                              className={
+                                dropcap.player === selectedPlayer
+                                  ? "active"
+                                  : ""
+                              }
+                              rel="noopener noreferrer"
+                            >
+                              {dropcap.text}
+                            </a>
+                          </div>
+                        ))}
+{/* Separador */}
+<div className="separator">||</div>
+                      {cap.downbtnsData
+                        .filter((downbtn) =>
+                          downbtn.href.includes("https://mega.nz")
+                        )
+                        .map((downbtn, j) => {
+                          const newHref = downbtn.href.replace(
+                            "https://mega.nz",
+                            "https://mega.nz/embed"
+                          );
+                          return (
+                            <div key={j}>
                               {/* eslint-disable-next-line */}
                               <a
                                 href="#"
                                 onClick={(e) => {
                                   e.preventDefault();
-                                  handlePlayerClick(dropcap.player);
+                                  handlePlayerClick(newHref);
                                 }}
                                 className={
-                                  dropcap.player === selectedPlayer
-                                    ? "active"
-                                    : ""
+                                  newHref === selectedPlayer ? "active" : ""
                                 }
                                 rel="noopener noreferrer"
                               >
-                                {dropcap.text}
+                                {downbtn.buttonText}
                               </a>
                             </div>
-                          )
-                      )}
+                          );
+                        })}
                     </div>
                   </div>
 
@@ -136,6 +178,7 @@ function App() {
                         width="700"
                         height="400"
                         allowFullScreen
+                        autoPlay // Agregamos el atributo autoplay aquí
                       ></iframe>
                     </div>
                   )}

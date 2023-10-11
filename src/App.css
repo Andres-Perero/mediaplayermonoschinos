@@ -50,7 +50,7 @@ button:hover {
   border: 0px solid #ccc;
   border-radius: 5px;
   padding: 0px;
-  margin-top: 50px;
+  margin-top: 0px;
 }
 
 ul {
@@ -78,7 +78,9 @@ h1 {
 }
 h2 {
   margin: 0;
+ 
 }
+.list-column h2 { margin-top: 50px;}
 
 .player-container {
   display: flex;
@@ -141,4 +143,11 @@ h2 {
 
 .episode-list button.active {
   background-color: #947d7d; /* Cambia este color según tu preferencia */
+}
+
+.separator {
+  font-size: 16px; /* Tamaño de fuente del separador */
+  margin-right: 10px;
+  text-align: center; /* Alineación del texto al centro */
+  color: #d6cccc; /* Color del texto del separador (puedes cambiarlo a tu preferencia) */
 }
