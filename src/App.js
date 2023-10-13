@@ -101,14 +101,10 @@ function App() {
               cap.chapter === selectedChapter.titulo &&
               showFullDescriptionCap && (
                 <div className="chapter-details" key={index}>
-                  <h2
-                    className={cap.chapter === selectedChapter ? "active" : ""}
-                  >
-                    {cap.chapter}
-                  </h2>
+                  
 
                   <div className="player-container">
-                    <h3>Server</h3>
+                    
                     <div className="player-links">
                       {cap.dropcapsData
                         .slice()
@@ -133,8 +129,8 @@ function App() {
                             </a>
                           </div>
                         ))}
-{/* Separador */}
-<div className="separator">||</div>
+                      {/* Separador */}
+                      <div className="separator">|</div>
                       {cap.downbtnsData
                         .filter((downbtn) =>
                           downbtn.href.includes("https://mega.nz")
@@ -175,8 +171,7 @@ function App() {
                         marginWidth="0"
                         marginHeight="0"
                         scrolling="no"
-                        width="700"
-                        height="400"
+                       
                         allowFullScreen
                         autoPlay // Agregamos el atributo autoplay aquí
                       ></iframe>
@@ -192,9 +187,10 @@ function App() {
                     </style>
                   )}
 
-                  <div className="player-container">
+                  <div className="dowmload-container">
                     <h3>Descargas</h3>
-                    <div className="player-links">
+                    
+                    <div className="dowmload-links">
                       {cap.downbtnsData.map((downbtn, j) => (
                         <div key={j}>
                           <a
@@ -204,10 +200,14 @@ function App() {
                           >
                             {downbtn.buttonText}
                           </a>
+                          
                         </div>
+                        
                       ))}
                     </div>
                   </div>
+              
+
                 </div>
               )
           )}

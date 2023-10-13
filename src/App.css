@@ -5,12 +5,12 @@
   border-radius: 15px;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
   margin: 10px;
-  overflow: hidden; /* Agregamos esta línea para ocultar la barra de desplazamiento */
+  overflow: hidden;
 }
 
 .info-column {
   flex: 2;
-  padding: 15px;
+  padding: 5px;
   box-sizing: border-box;
 }
 
@@ -19,11 +19,15 @@
   padding: 15px;
   box-sizing: border-box;
   background-color: #555;
+}
+.list-column h2 {
   
+  border-bottom: 2px solid #ff56228a; /* Añade un borde inferior */
+  padding-bottom: 0px; /* Añade espacio entre el texto y el borde */
 }
 
 .cover-image {
-  width: 50%;
+  width: 60%;
   display: block;
   margin: 0 auto;
   border-radius: 5px;
@@ -45,12 +49,12 @@ button:hover {
 }
 
 .episode-list {
-  max-height: 430px;
+  max-height: 480px;
   overflow-y: auto;
   border: 0px solid #ccc;
   border-radius: 5px;
   padding: 0px;
-  margin-top: 0px;
+  margin-top: 0%;
 }
 
 ul {
@@ -75,17 +79,22 @@ a:hover {
 
 h1 {
   margin: 0;
+  margin-bottom: 10px;
 }
+
 h2 {
   margin: 0;
- 
 }
-.list-column h2 { margin-top: 50px;}
+
+.list-column h2 {
+  margin-top: 15%;
+}
 
 .player-container {
   display: flex;
   flex-direction: column;
-  align-items: center;
+  align-items: start;
+  margin-top: 20px;
 }
 
 .player-container h3 {
@@ -95,19 +104,50 @@ h2 {
 
 .player-links {
   display: flex;
+  border: 2px solid #ff5622b6;
+  border-radius: 5px;
+  padding: 10px;
+  padding-bottom: 0%;
+}
+.dowmload-container {
+  display: flex;
+  align-items: center; /* Centra los elementos verticalmente */
+  margin-top: 5%;
+  margin-bottom: 3%;
+}
+.dowmload-links div {
+  flex: 1; /* Distribuye los elementos en la misma línea */
+}
+.dowmload-container h3 {
+  margin-top: 0;
+  margin-bottom: 5px;
+  margin-right: 1%;
+}
+.dowmload-links {
+  display: flex;
+  flex-wrap: wrap; /* Asegura que los elementos se envuelvan cuando no haya suficiente espacio */
+  border: 2px solid #ff5622b6;
+  border-radius: 5px;
+  padding-left: 1%;
+}
+.player-links a {
+  margin-right: 30px;
+}
+.dowmload-links a {
+  margin-right: 20px;
 }
 
-.player-links a {
-  margin-right: 10px;
+.video-player {
+  text-align: center;
 }
 
 .video-player iframe {
   width: 100%;
   max-width: 720px;
-  height: 360px;
+  height: 480px;
   border: none;
   border-radius: 5px;
-  padding: 20px;
+  padding: 1%;
 }
 
 #4vgu0o2s {
@@ -118,9 +158,11 @@ h2 {
   background-color: #c01717;
   box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.2);
 }
+
 .episode-list ul {
   padding: 0;
 }
+
 .episode-list li {
   list-style: none;
   margin: 0px;
@@ -132,22 +174,24 @@ h2 {
 
 .episode-list button {
   width: 100%;
-  background-color: #645a58;
+  background-color: #645a5818;
   color: #fff;
   border: none;
-  padding: 10px; /* Ajusta este valor según sea necesario */
-  border-radius: 3px; /* Ajusta este valor según sea necesario */
+  padding: 10px;
+  border-radius: 3px;
   cursor: pointer;
   text-align: left;
+  font-size: 110%;
 }
 
 .episode-list button.active {
-  background-color: #947d7d; /* Cambia este color según tu preferencia */
+  background-color: #947d7d;
 }
 
 .separator {
-  font-size: 16px; /* Tamaño de fuente del separador */
-  margin-right: 10px;
-  text-align: center; /* Alineación del texto al centro */
-  color: #d6cccc; /* Color del texto del separador (puedes cambiarlo a tu preferencia) */
+  font-size: 20px;
+  margin-right: 20px;
+  text-align: center;
+  color: #d6cccc;
 }
+
