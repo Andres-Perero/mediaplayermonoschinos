@@ -111,7 +111,7 @@ h2 {
 }
 .dowmload-container {
   display: flex;
-  align-items: center; /* Centra los elementos verticalmente */
+  align-items: flex-start; /* Centra los elementos verticalmente */
   margin-top: 5%;
   margin-bottom: 3%;
 }
